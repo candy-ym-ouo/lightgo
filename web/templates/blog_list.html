@@ -1,0 +1,6 @@
+{{define "content"}}
+<div class="section-title"><div><span class="eyebrow">BLOG</span><h1>文章列表</h1></div><a class="button" href="/blog/new">新建文章</a></div>
+<form class="filters" method="get"><input name="keyword" value="{{.Keyword}}" placeholder="搜索标题或摘要"><input name="category" value="{{.Category}}" placeholder="分类"><button>搜索</button></form>
+<div class="grid">{{range .Page.Items}}<article class="card"><div><span class="pill">{{.Category}}</span><span class="status {{.Status}}">{{.Status}}</span></div><h2><a href="/blog/{{.ID}}">{{.Title}}</a></h2><p>{{truncate .Summary 120}}</p><small>{{.Author}} · {{date .CreatedAt}} · {{.Views}} 次浏览</small></article>{{else}}<div class="empty">没有符合条件的文章。</div>{{end}}</div>
+<div class="pagination"><span>第 {{.Page.Page}} / {{.Page.Pages}} 页，共 {{.Page.Total}} 篇</span>{{if gt .Page.Page 1}}<a href="?page={{sub .Page.Page 1}}&keyword={{.Keyword}}">上一页</a>{{end}}{{if lt .Page.Page .Page.Pages}}<a href="?page={{add .Page.Page 1}}&keyword={{.Keyword}}">下一页</a>{{end}}</div>
+{{end}}

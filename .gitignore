@@ -1,0 +1,10 @@
+# Local build outputs
+/bin/
+/dist/
+/server
+
+# Local environment and editor files
+.env
+.DS_Store
+.idea/
+.vscode/

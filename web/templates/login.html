@@ -1,0 +1,3 @@
+{{define "content"}}
+<section class="auth"><div><span class="eyebrow">WELCOME</span><h1>登录 LightGo</h1><p>登录后即可新建、编辑和删除自己的文章。</p><p class="notice">演示账号：admin / secret123，或 alice / secret123</p></div><div class="auth-panels"><form id="login-form"><h2>登录</h2><label>用户名<input name="username" required></label><label>密码<input name="password" type="password" required></label><button class="button">登录</button><p class="message"></p></form><form id="register-form"><h2>注册</h2><label>用户名<input name="username" required minlength="3"></label><label>密码<input name="password" type="password" required minlength="6"></label><button class="button secondary">创建账号</button><p class="message"></p></form></div></section>
+{{end}}

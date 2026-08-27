@@ -1,0 +1,5 @@
+{{define "content"}}
+<section class="hero"><span class="eyebrow">LIGHTWEIGHT · STANDARD LIBRARY</span><h1>理解 Web 框架，从核心开始。</h1><p>LightGo 提供参数路由、中间件链、请求绑定校验、模板渲染与静态文件服务。</p><div class="actions"><a class="button" href="/blog">浏览文章</a><a class="button secondary" href="/blog/new">开始创作</a></div></section>
+<section class="stats"><article><strong>{{.Stats.Posts}}</strong><span>文章</span></article><article><strong>{{.Stats.Users}}</strong><span>用户</span></article><article><strong>{{.Stats.Views}}</strong><span>浏览</span></article></section>
+<section><div class="section-title"><h2>最新文章</h2><a href="/blog">查看全部 →</a></div><div class="grid">{{range .Stats.LatestPosts}}<article class="card"><span class="pill">{{.Category}}</span><h3><a href="/blog/{{.ID}}">{{.Title}}</a></h3><p>{{truncate .Summary 80}}</p><small>{{.Author}} · {{date .CreatedAt}}</small></article>{{else}}<p>暂无文章。</p>{{end}}</div></section>
+{{end}}
